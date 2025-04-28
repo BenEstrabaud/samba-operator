@@ -44,6 +44,11 @@ type SmbCommonConfigSpec struct {
 	// override default configurations.
 	// +opional
 	CustomGlobalConfig *SmbCommonConfigGlobalConfig `json:"customGlobalConfig,omitempty"`
+
+	// StateSCName specifies which StorageClass is to be used for this share.
+	// If left empty, the operator's default will be used.
+	// +optional
+	StatePVSCName string `json:"statePVSCName,omitempty"`
 }
 
 // SmbCommonNetworkSpec values define networking properties for the services
