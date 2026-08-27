@@ -35,7 +35,7 @@ YAMLLINT_CMD:=yamllint
 
 # Image URL to use all building/pushing image targets
 TAG?=latest
-IMG?=quay.io/samba.org/samba-operator:$(TAG)
+IMG?=quay.io/benestrabaud/samba-operator:$(TAG)
 
 # Produce CRDs that work on Kubernetes 1.16 or later
 CRD_OPTIONS?="crd:crdVersions=v1"
@@ -144,7 +144,7 @@ endif
 .PHONY: developer-dir
 
 set-image: kustomize $(MGR_KUST_DIR)/kustomization.yaml
-	cd $(MGR_KUST_DIR) && $(KUSTOMIZE) edit set image quay.io/samba.org/samba-operator=$(IMG)
+	cd $(MGR_KUST_DIR) && $(KUSTOMIZE) edit set image quay.io/benestrabaud/samba-operator=$(IMG)
 .PHONY: set-image
 
 # Generate manifests e.g. CRD, RBAC etc.
