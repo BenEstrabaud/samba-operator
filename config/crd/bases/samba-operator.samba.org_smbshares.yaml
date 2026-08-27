@@ -155,8 +155,7 @@ spec:
                           pattern: ^[^\/].*$
                           type: string
                           x-kubernetes-validations:
-                            - message: path must not contain '..' traversal
-                              rule: '!(''..'' in self.split(''/''))'
+                            - rule: '!(''..'' in self.split(''/''))'
                         spec:
                           description: |-
                             Spec defines a new, temporary, PVC to use for the share.

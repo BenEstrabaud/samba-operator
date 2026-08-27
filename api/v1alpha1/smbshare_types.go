@@ -103,7 +103,7 @@ type SmbSharePvcSpec struct {
 	// Path within the PVC which should be exported.
 	// Must be a relative path. Path traversal ("..") is not allowed.
 	// +kubebuilder:validation:Pattern=`^[^\/].*$`
-	// +kubebuilder:validation:XValidation:rule="!('..' in self.split('/'))",message="path must not contain '..' traversal"
+	// +kubebuilder:validation:XValidation:rule="!('..' in self.split('/'))"
 	// +optional
 	Path string `json:"path,omitempty"`
 }
