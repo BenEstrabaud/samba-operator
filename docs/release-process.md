@@ -89,7 +89,7 @@ inspect the `Dockerfile` and purge or explicitly pull each base image.
 Run `make image-build`.
 
 Verify that the tag was properly recorded by the binary in the container.
-* Run `podman run --rm -it quay.io/samba.org/samba-operator:latest`
+* Run `podman run --rm -it quay.io/benestrabaud/samba-operator:latest`
 * The operator will fail to start because it is not running in Kubernetes.
   However, all you need to verify is that the first log line, with
   "Initializing Manager", contains JSON values that have the correct tag in the
@@ -99,12 +99,12 @@ Verify that the tag was properly recorded by the binary in the container.
 For the image that was just built, apply a temporary pre-release tag
 to it. Example:
 ```
-podman tag quay.io/samba.org/samba-operator:{latest,v0.5pre1}
+podman tag quay.io/benestrabaud/samba-operator:{latest,v0.5pre1}
 ```
 
 Log into quay.io.  Push the images to quay.io using the temporary tag. Example:
 ```
-podman push quay.io/samba.org/samba-operator:{latest,v0.5pre1}
+podman push quay.io/benestrabaud/samba-operator:{latest,v0.5pre1}
 ```
 
 Wait for the security scan to complete. There shouldn't be any issues if you
@@ -144,8 +144,8 @@ reference the image that was pushed to quay.io in an earlier step.
 
 The samba-operator image can be acquired from the quay.io image registry:
 
-* By tag: quay.io/samba.org/samba-operator:v0.5
-* By digest: quay.io/samba.org/samba-operator@sha256:040307f53c3f3fd6a5935306f9898858b6c46b7e9c2ae46244e79c2bc42fef0d
+* By tag: quay.io/benestrabaud/samba-operator:v0.5
+* By digest: quay.io/benestrabaud/samba-operator@sha256:<digest-of-pushed-image>
 
 ### Deploying the operator
 
@@ -155,7 +155,7 @@ kubectl apply -f samba-operator-v0.5-default.yaml
 
 This is equivalent to checking out the v0.5 tag from the git repository and using the default configuration. Example:
 
-git clone -b v0.5 https://github.com/samba-in-kubernetes/samba-operator
+git clone -b v0.5 https://github.com/BenEstrabaud/samba-operator
 cd samba-operator
 kubectl apply -k config/default
 

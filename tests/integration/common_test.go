@@ -19,7 +19,7 @@ var (
 
 	kustomizeCmd = "kustomize"
 
-	testExpectedImage = "quay.io/samba.org/samba-operator:latest"
+	testExpectedImage = "quay.io/benestrabaud/samba-operator:latest"
 
 	testClusteredShares = false
 

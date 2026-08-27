@@ -160,7 +160,7 @@ This operator uses the container built from
 as found on [quay.io](https://quay.io/repository/samba.org/samba-server).
 
 The container from this codebase is published on
-[quay.io](https://quay.io/repository/samba.org/samba-operator) too.
+[quay.io](https://quay.io/repository/benestrabaud/samba-operator) too.
 
 
 ## Additional Resources
